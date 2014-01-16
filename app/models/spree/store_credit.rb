@@ -1,4 +1,6 @@
 class Spree::StoreCredit < ActiveRecord::Base
+  belongs_to :source, :polymorphic => true
+
   validates :amount, :presence => true, :numericality => true
   validates :reason, :presence => true
   validates :user, :presence => true
